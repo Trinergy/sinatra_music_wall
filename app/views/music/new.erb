@@ -1,0 +1,35 @@
+<h1>Add a song, broh.</h1>
+<hr/>
+
+<% if @music.errors.any? %>
+   <div>
+     <strong>Some issues with your input, please fix them:</strong>
+     <ul>
+       <% @music.errors.full_messages.each do |song| %>
+         <li><%= song %></li>
+       <% end %>
+     </ul>
+   </div>
+<% end %>
+
+<form method ="post" action="/music">
+  <div>
+    <label>Song Title: </label>
+    <input type="text" name="song_title" value="<%= @music.song_title %>">
+  </div>
+  <div>
+    <label>Artist: </label>
+    <input type="text" name="artist" value="<%= @music.artist %>">
+  </div>
+  <div>
+    <label>Author: </label>
+    <input type="text" name="author" value="<%= @music.author %>">
+  </div>
+  <div>
+    <label>Url: </label>
+    <input type="text" name="url" value="<%= @music.url %>">
+  </div>
+  <div>
+    <input type="submit" value="POST IT BRONOVSKI!!">
+  </div>
+</form>

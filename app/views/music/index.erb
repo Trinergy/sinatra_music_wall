@@ -1,0 +1,26 @@
+<div class="container">
+
+<div class="jumbotron">
+<h1>The Community Playlist, brah.</h1>
+</div>
+
+<hr/>
+<p class="lead">
+  <% @musics.each do |song| %>
+    <div class="music">
+      <h3><%= song.song_title %> by: <%= song.artist %></h3>
+      <p class="small">
+        posted by: <%= song.author %>
+      </p>
+      <p>
+        <% unless song.url.nil? %>
+        url: <a href="<%= song.url %>"><%= song.url %></a>
+        <% end %>
+      </p>
+    </div>
+  <% end %>
+</p>
+
+<hr/>
+<a class="btn btn-lg btn-success" href="/music/new" role="button">These songs ain't bro enough, bro? Add your own, brah.</a>
+</div>
