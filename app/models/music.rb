@@ -3,4 +3,7 @@ class Music < ActiveRecord::Base
   validates :artist, presence: true
   validates :author, presence: true
 
+  has_many :upvotes
+  has_many :reviews
+
 end

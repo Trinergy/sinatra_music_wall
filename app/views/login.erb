@@ -1,0 +1,22 @@
+<h1> SENPAI HAS COME TO NOTICE ME?! </br> DON'T EVER LEAVE ME AGAIN >:(</h1>
+<div>
+<p> 
+<% if @login_fail_message %>
+<%= @login_fail_message %>
+<% end %>
+</p>
+</div>
+<form method="post" action="/login">
+  <div>
+    <label>Username: </label>
+    <input type="text" name="username" value="<%= @user.username %>">
+  </div>
+  <div>
+    <label>Password: </label>
+    <input type="text" name="password" type="password" value="<%= @user.password %>">
+  </div>
+    <input class="btn btn-lg btn-primary" type="submit" value="SOU DESU NE">
+  </div>
+</form>
+</br>
+<a class="btn btn-warning" href="/">BACK TO SENPAIS</a>

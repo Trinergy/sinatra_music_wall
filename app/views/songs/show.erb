@@ -1,0 +1,72 @@
+</br>
+</br>
+</br>
+
+<p>
+ Posted by: <%= @song.author %>
+</p>
+<p>
+ Song title: <%= @song.song_title  %>
+</p>
+<p>
+ Artist: <%= @song.artist %>
+</p>
+<% if @song.url %>
+<p><%= @song.url %></p>
+<% end %>
+<p>
+  Created at: <%= @song.created_at %>
+</p>
+</br>
+<p> COMMENTS </p>
+</br>
+<% @song_reviews.each do |review| %>
+<div>
+subject: <%= review.subject %> 
+</br>
+rating: <%= review.rating %>
+</br>
+comment: <%= review.comment %>
+</br>
+<small>posted by <%= review.user.username %></small>
+<% if current_user == review.user %>
+<a class="btn btn-xs btn-danger" href="/song/<%= review.music_id %>/delete" role="button">delete comment</a>
+<% end %>
+</br>
+</br>
+</div>
+<% end %>
+
+<% if current_user.username != 'stranger' && Review.where(user: current_user).where(music: @song).empty? %>
+<form method ="post" action="/songs/review">
+  <div>
+    <label>Subject: </label>
+    <input type="text" name="subject" value="<%= @review.subject %>">
+  </div>
+  <div>
+    <label>Comment: </label>
+    <input type="text" name="comment" value="<%= @review.comment %>">
+  </div>
+    <input type="hidden" name="id" value="<%= @song.id %>">
+    <select name="rating">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    <input class="btn btn-lg btn-primary" type="submit" value="KAWAII">
+  </div>
+</form>
+<% else %>
+<p>
+YOU MUST BE SENPAI TO COMMENT!
+</br>
+Or kawaii senpai already commented, teehee
+</br>
+Senpai come back to me please.
+</p>
+<% end %>
+</br>
+
+<a class="btn btn-warning" href="/music">BACK TO SENPAIS</a>

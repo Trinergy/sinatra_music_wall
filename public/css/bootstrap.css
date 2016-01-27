@@ -4,6 +4,30 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+#signup_button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+#login_button {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+#user {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+#logout_button {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -213,7 +237,7 @@ th {
     content: "";
   }
   pre,
-  blockquote {
+  blockquote {jumbo
     border: 1px solid #999;
 
     page-break-inside: avoid;

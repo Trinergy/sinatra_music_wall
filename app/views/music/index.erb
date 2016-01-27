@@ -8,19 +8,26 @@
 <p class="lead">
   <% @musics.each do |song| %>
     <div class="music">
-      <h3><%= song.song_title %> by: <%= song.artist %></h3>
+      <h3><a href="/songs/<%= song.id %>"><%= song.song_title %></a>
+      <small>upvotes: <%= song.upvotes.count %></small>
+      <% if current_user.username != 'stranger' && Upvote.where(user: current_user).where(music: song).empty? %>
+      <a class="btn btn-xs btn-primary" href="/song/<%= song.id %>/upvote" role="button">+</a>
+      <% end %>
+      </h3>
+      <p>
+      by: <%= song.artist %>
+      </p>
       <p class="small">
         posted by: <%= song.author %>
       </p>
       <p>
-        <% unless song.url.nil? %>
+        <% if !song.url.nil? && song.url != "" %>
         url: <a href="<%= song.url %>"><%= song.url %></a>
         <% end %>
       </p>
     </div>
   <% end %>
 </p>
-
 <hr/>
 <a class="btn btn-lg btn-success" href="/music/new" role="button">These songs ain't bro enough, bro? Add your own, brah.</a>
 </div>

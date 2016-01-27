@@ -1,0 +1,27 @@
+<h1> BE A SENPAI, PLEASE NOTICE ME </h1>
+
+<% if @user.errors.any? %>
+   <div>
+     <strong>Some issues with your input, please fix them:</strong>
+     <ul>
+       <% @user.errors.full_messages.each do |error| %>
+         <li><%= error %></li>
+       <% end %>
+     </ul>
+   </div>
+<% end %>
+
+<form method ="post" action="/signup">
+  <div>
+    <label>Username: </label>
+    <input type="text" name="username" value="<%= @user.username %>">
+  </div>
+  <div>
+    <label>Password: </label>
+    <input type="text" name="password" type="password" value="<%= @user.password %>">
+  </div>
+    <input class="btn btn-lg btn-primary" type="submit" value="KAWAII">
+  </div>
+</form>
+</br>
+<a class="btn btn-warning" href="/">BACK TO SENPAIS</a>

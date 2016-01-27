@@ -22,8 +22,10 @@
     <input type="text" name="artist" value="<%= @music.artist %>">
   </div>
   <div>
+    <% if current_user.username == "stranger" %>
     <label>Author: </label>
     <input type="text" name="author" value="<%= @music.author %>">
+    <% end %>
   </div>
   <div>
     <label>Url: </label>
