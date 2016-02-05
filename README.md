@@ -1,10 +1,14 @@
-Sinatra
-=============
+Week 4
 
-Brought to you by Lighthouse Labs
+Second Sinatra exercise
+Played around with CSS for the first time and went really crazy with the layout.
+One really creepy and hard to use app.
+The web app is essentially a creepy stalker.
+Not my proudest work, but there is beauty in its' madness
 
-## Getting Started
+Feel free to contact me if you have any questions.
+wu.kenny1221@gmail.com
 
-1. `bundle install`
-2. `shotgun -p 3000 -o 0.0.0.0`
-3. Visit `http://localhost:3000/` in your browser
+Cheers,
+
+Kenny
